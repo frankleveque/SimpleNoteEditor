@@ -49,6 +49,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(delFileAct, SIGNAL(triggered(bool)), this, SLOT(deleteFile()));
 
     QDir::setCurrent("Data");
+
+    QList<int> startingSize;
+    startingSize << 150 << 500;
+    ui->splitter->setSizes(startingSize);
+    ui->splitter->setStretchFactor(0,0);
+
 }
 
 void MainWindow::deleteFile()
